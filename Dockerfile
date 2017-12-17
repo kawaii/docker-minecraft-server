@@ -12,4 +12,7 @@ RUN set -ex; \
 	echo "$MINECRAFT_SHA1 *minecraft-server.jar" | sha1sum -c -; \
 	chmod +x minecraft-server.jar
 
+COPY docker-entrypoint.sh /usr/local/bin/
+
+ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["java", "-Xmx1024M", "-Xms1024M", "-jar", "minecraft-server.jar", "nogui"]
