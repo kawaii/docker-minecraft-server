@@ -14,5 +14,6 @@ RUN set -ex; \
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
+EXPOSE 25565
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["java", "-Xmx1024M", "-Xms1024M", "-jar", "minecraft-server.jar", "nogui"]
