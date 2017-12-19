@@ -1,5 +1,14 @@
-FROM openjdk:9-jre
+FROM openjdk:9-jre-slim
 MAINTAINER Kane Valentine <kane@cute.im>
+
+RUN set -ex; \
+	\
+	apt-get update; \
+	apt-get install -y --no-install-suggests --no-install-recommends \
+		curl \
+	; \
+        apt-get clean; \
+	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV MINECRAFT_VERSION 1.12.2
 ENV MINECRAFT_SHA1 886945bfb2b978778c3a0288fd7fab09d315b25f
