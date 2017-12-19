@@ -4,7 +4,6 @@ MAINTAINER Kane Valentine <kane@cute.im>
 ENV MINECRAFT_VERSION 1.12.2
 ENV MINECRAFT_SHA1 886945bfb2b978778c3a0288fd7fab09d315b25f
 
-RUN mkdir -p /opt/minecraft/
 WORKDIR /opt/minecraft/
 
 RUN set -ex; \
